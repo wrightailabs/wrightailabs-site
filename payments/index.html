@@ -156,6 +156,72 @@
         transform: translateY(-2px);
       }
 
+      .modules {
+        margin-top: 64px;
+        border: 1px solid var(--card-border);
+        border-radius: 28px;
+        padding: 40px;
+        background: rgba(8, 10, 16, 0.85);
+        box-shadow: var(--shadow);
+      }
+
+      .modules-header h2 {
+        margin: 8px 0;
+        font-family: "Space Grotesk", "Inter", sans-serif;
+      }
+
+      .modules-grid {
+        margin-top: 32px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 20px;
+      }
+
+      .module-card {
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: rgba(14, 17, 24, 0.95);
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .module-card h3 {
+        margin: 0;
+        font-size: 1.15rem;
+        font-family: "Space Grotesk", "Inter", sans-serif;
+      }
+
+      .module-meta {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        font-size: 0.95rem;
+        color: var(--muted);
+      }
+
+      .module-meta span strong {
+        color: var(--text);
+      }
+
+      .module-card a.module-link {
+        margin-top: auto;
+        align-self: flex-start;
+        padding: 10px 14px;
+        border-radius: 12px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: var(--text);
+        text-decoration: none;
+        transition: transform 0.2s ease;
+      }
+
+      .module-card a.module-link:hover {
+        transform: translateY(-2px);
+      }
+
       section.info-block {
         border: 1px solid var(--card-border);
         border-radius: 24px;
@@ -244,83 +310,15 @@
         </p>
       </header>
 
-      <section class="plan-grid">
-        <article class="plan-card">
-          <div class="plan-name">Starter</div>
-          <p class="plan-desc">Inbound voice agent + basic reporting for shops that want Claire answering calls within 2 weeks.</p>
-          <div class="price-row">
-            <strong>One-Time Build — $2,000</strong>
-            <span>Architecture design, call flows, integrations, training</span>
-          </div>
-          <div class="price-row">
-            <strong>Managed Operations — $498/mo</strong>
-            <span>Monitoring, uptime checks, incident response</span>
-          </div>
-          <div class="price-row">
-            <strong>Custom Automations — Contract Add-On</strong>
-            <span>Optional campaigns/modules detailed in your contract</span>
-          </div>
-          <ul class="features">
-            <li>Inbound call coverage (8a–8p ET)</li>
-            <li>Daily call summary emails</li>
-            <li>Basic lead / booking dashboard</li>
-          </ul>
-          <a class="cta" href="https://buy.stripe.com/4gM14madyaGXeUDfNvbo403" target="_blank" rel="noopener">
-            Select Starter Plan
-          </a>
-        </article>
+      <section class="plan-grid" data-plan-grid></section>
 
-        <article class="plan-card featured">
-          <div class="plan-name">Growth (Most Popular)</div>
-          <p class="plan-desc">
-            All Starter features plus outbound lead chase, collections workflows, and custom dashboards for owner visibility.
-          </p>
-          <div class="price-row">
-            <strong>One-Time Build — $2,000</strong>
-            <span>CRM/HCP wiring, automation design, QA, training</span>
-          </div>
-          <div class="price-row">
-            <strong>Managed Operations — $998/mo</strong>
-            <span>Proactive monitoring, incident response, priority support</span>
-          </div>
-          <div class="price-row">
-            <strong>Custom Automations — Contract Add-On</strong>
-            <span>Optional campaigns/modules detailed in your contract</span>
-          </div>
-          <ul class="features">
-            <li>Inbound + outbound voice automations</li>
-            <li>Collections & estimate follow-up sequences</li>
-            <li>Executive dashboards + SMS / email alerts</li>
-          </ul>
-          <a class="cta" href="https://buy.stripe.com/cNicN42L616nh2L44Nbo404" target="_blank" rel="noopener">
-            Select Growth Plan ($2,998 today)
-          </a>
-        </article>
-
-        <article class="plan-card">
-          <div class="plan-name">Business Intelligence</div>
-          <p class="plan-desc">Enterprise-grade automations, custom analytics, and dedicated engineering support.</p>
-          <div class="price-row">
-            <strong>One-Time Build — $2,500</strong>
-            <span>Multi-brand rollout, data warehouse, advanced QA</span>
-          </div>
-          <div class="price-row">
-            <strong>Managed Operations — $1,498/mo</strong>
-            <span>Dedicated success engineer, 24h SLA, system monitoring</span>
-          </div>
-          <div class="price-row">
-            <strong>Custom Automations — Contract Add-On</strong>
-            <span>Optional campaigns/modules detailed in your contract</span>
-          </div>
-          <ul class="features">
-            <li>All Growth capabilities</li>
-            <li>Revenue attribution + ad spend dashboards</li>
-            <li>Custom data syncs + API integrations</li>
-          </ul>
-          <a class="cta" href="https://buy.stripe.com/eVq7sKfxS02j9Aj8l3bo405" target="_blank" rel="noopener">
-            Select BI Plan ($2,500 today)
-          </a>
-        </article>
+      <section class="modules" id="modules">
+        <header class="modules-header">
+          <p class="eyebrow" style="color: var(--accent); letter-spacing: 0.12em; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 12px;">Build Your Stack</p>
+          <h2>À La Carte Automations & Services</h2>
+          <p>Mix and match modules for white-label deployments or standalone engagements. Each add-on is scoped as a custom automation so pricing stays clear on the contract.</p>
+        </header>
+        <div class="modules-grid" data-modules-grid></div>
       </section>
 
       <section class="info-block">
@@ -389,7 +387,231 @@
       </footer>
     </div>
     <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
+      const planData = [
+        {
+          name: "Starter",
+          description: "Inbound voice agent + basic reporting for shops that want Claire answering calls within 2 weeks.",
+          badge: null,
+          featured: false,
+          setup: {
+            title: "One-Time Build",
+            value: "$2,000",
+            notes: "Architecture design, call flows, integrations, training",
+          },
+          maintenance: {
+            title: "Managed Operations",
+            value: "$498/mo",
+            notes: "Monitoring, uptime checks, incident response",
+          },
+          custom: {
+            title: "Custom Automations",
+            value: "Contract add-on",
+            notes: "Optional campaigns/modules detailed in your contract",
+          },
+          features: [
+            "Claire inbound voice AI (8a–8p ET coverage)",
+            "Daily call summary emails",
+            "Claire status dashboard (1 view)",
+          ],
+          cta: {
+            text: "Select Starter Plan",
+            href: "https://buy.stripe.com/4gM14madyaGXeUDfNvbo403",
+          },
+        },
+        {
+          name: "Growth",
+          description:
+            "All Starter features plus outbound lead chase, collections workflows, and custom dashboards for owner visibility.",
+          badge: "Most Popular",
+          featured: true,
+          setup: {
+            title: "One-Time Build",
+            value: "$2,000",
+            notes: "CRM/HCP wiring, automation design, QA, training",
+          },
+          maintenance: {
+            title: "Managed Operations",
+            value: "$998/mo",
+            notes: "Proactive monitoring, incident response, priority support",
+          },
+          custom: {
+            title: "Custom Automations",
+            value: "Contract add-on",
+            notes: "Optional campaigns/modules detailed in your contract",
+          },
+          features: [
+            "Inbound + outbound voice automations",
+            "Collections & estimate follow-up sequences",
+            "Executive dashboards + SMS / email alerts",
+          ],
+          cta: {
+            text: "Select Growth Plan ($2,998 today)",
+            href: "https://buy.stripe.com/cNicN42L616nh2L44Nbo404",
+          },
+        },
+        {
+          name: "Business Intelligence",
+          description: "Enterprise-grade automations, custom analytics, and dedicated engineering support.",
+          badge: null,
+          featured: false,
+          setup: {
+            title: "One-Time Build",
+            value: "$2,500",
+            notes: "Multi-brand rollout, data warehouse, advanced QA",
+          },
+          maintenance: {
+            title: "Managed Operations",
+            value: "$1,498/mo",
+            notes: "Dedicated success engineer, 24h SLA, system monitoring",
+          },
+          custom: {
+            title: "Custom Automations",
+            value: "Contract add-on",
+            notes: "Optional campaigns/modules detailed in your contract",
+          },
+          features: [
+            "All Growth capabilities",
+            "Revenue attribution + ad spend dashboards",
+            "Custom data syncs + API integrations",
+          ],
+          cta: {
+            text: "Select BI Plan ($2,500 today)",
+            href: "https://buy.stripe.com/eVq7sKfxS02j9Aj8l3bo405",
+          },
+        },
+      ];
+
+      const modulesData = [
+        {
+          name: "Claire Voice AI (Inbound)",
+          summary: "Answers every inbound call, qualifies leads, and books directly into HCP or your CRM.",
+          setup: "Included in Starter, Growth, BI",
+          maintenance: "Covered by Managed Operations",
+          availability: "Standalone deployments available for white-label partners via custom quote.",
+          linkText: "Request module quote",
+          linkHref: "mailto:dennis@wrightailabs.com?subject=Module%20Request%20-%20Claire%20Voice%20AI%20(Inbound)",
+        },
+        {
+          name: "Claire Voice AI (Outbound)",
+          summary: "Calls Angi/Yelp/web leads, estimate follow-ups, and collections queues automatically.",
+          setup: "Included in Growth+ or sold stand-alone",
+          maintenance: "Uses Managed Operations retainer",
+          availability: "Requires access to your lead sources + CRM.",
+          linkText: "Request module quote",
+          linkHref: "mailto:dennis@wrightailabs.com?subject=Module%20Request%20-%20Claire%20Voice%20AI%20(Outbound)",
+        },
+        {
+          name: "Lead Response Automation",
+          summary: "Contacts every inbound lead within 60 seconds via phone + SMS, with owner alerts if unanswered.",
+          setup: "Included in Growth+",
+          maintenance: "Managed Operations",
+          availability: "Available as an add-on for agency partners (custom pricing).",
+          linkText: "Request module quote",
+          linkHref: "mailto:dennis@wrightailabs.com?subject=Module%20Request%20-%20Lead%20Response%20Automation",
+        },
+        {
+          name: "Estimate & Collections Agent",
+          summary: "Escalating follow-up sequence (7/14/30 days) plus collections outreach for overdue invoices.",
+          setup: "Included in Growth+",
+          maintenance: "Managed Operations",
+          availability: "Standalone pricing available for white-label bundles.",
+          linkText: "Request module quote",
+          linkHref: "mailto:dennis@wrightailabs.com?subject=Module%20Request%20-%20Estimate%20%26%20Collections",
+        },
+        {
+          name: "BI Dashboard Suite",
+          summary: "Live dashboards for ops, estimates, attribution, LTV, collections, and Claire performance.",
+          setup: "Included in Growth+",
+          maintenance: "$100+/mo when sold separately",
+          availability: "Custom dashboard builds available as scoped projects.",
+          linkText: "Request dashboard scope",
+          linkHref: "mailto:dennis@wrightailabs.com?subject=Module%20Request%20-%20BI%20Dashboards",
+        },
+        {
+          name: "Meta CAPI Attribution",
+          summary: "Sends every completed job back to Meta for improved ad optimization and ROAS reporting.",
+          setup: "$500 one-time",
+          maintenance: "Managed Operations",
+          availability: "Requires access to Meta Business Manager + CRM exports.",
+          linkText: "Request CAPI setup",
+          linkHref: "mailto:dennis@wrightailabs.com?subject=Module%20Request%20-%20Meta%20CAPI",
+        },
+        {
+          name: "Custom Dashboard Build",
+          summary: "Tailored dashboards beyond the standard suite (team performance, ad spend blends, etc.).",
+          setup: "$500 one-time per dashboard",
+          maintenance: "Managed Operations",
+          availability: "Includes requirements workshop + delivery review.",
+          linkText: "Schedule build",
+          linkHref: "mailto:dennis@wrightailabs.com?subject=Module%20Request%20-%20Custom%20Dashboard",
+        },
+        {
+          name: "Customer Reactivation Campaign",
+          summary: "Cleanses past customer data and triggers a one-time outbound campaign to win back lapsed clients.",
+          setup: "$300 data cleanup + $500 campaign",
+          maintenance: "N/A (one-time)",
+          availability: "Pairs well with SMS/email follow-up managed by your team.",
+          linkText: "Request campaign",
+          linkHref: "mailto:dennis@wrightailabs.com?subject=Module%20Request%20-%20Reactivation%20Campaign",
+        },
+      ];
+
+      const planGridEl = document.querySelector('[data-plan-grid]');
+      const modulesGridEl = document.querySelector('[data-modules-grid]');
+
+      const buildPriceRow = (item) => `
+        <div class="price-row">
+          <strong>${item.title} — ${item.value}</strong>
+          <span>${item.notes}</span>
+        </div>
+      `;
+
+      const buildFeatureList = (features) => `
+        <ul class="features">
+          ${features.map((feature) => `<li>${feature}</li>`).join("")}
+        </ul>
+      `;
+
+      if (planGridEl) {
+        planGridEl.innerHTML = planData
+          .map((plan) => `
+            <article class="plan-card${plan.featured ? " featured" : ""}">
+              <div class="plan-name">
+                ${plan.name}
+                ${plan.badge ? `<span style="font-size:0.75rem; color: var(--accent); margin-left:8px;">${plan.badge}</span>` : ""}
+              </div>
+              <p class="plan-desc">${plan.description}</p>
+              ${buildPriceRow(plan.setup)}
+              ${buildPriceRow(plan.maintenance)}
+              ${buildPriceRow(plan.custom)}
+              ${buildFeatureList(plan.features)}
+              <a class="cta" href="${plan.cta.href}" target="_blank" rel="noopener">${plan.cta.text}</a>
+            </article>
+          `)
+          .join("");
+      }
+
+      if (modulesGridEl) {
+        modulesGridEl.innerHTML = modulesData
+          .map((module) => `
+            <article class="module-card">
+              <h3>${module.name}</h3>
+              <p class="module-summary">${module.summary}</p>
+              <div class="module-meta">
+                <span><strong>Setup:</strong> ${module.setup}</span>
+                <span><strong>Managed Ops:</strong> ${module.maintenance}</span>
+                <span><strong>Notes:</strong> ${module.availability}</span>
+              </div>
+              <a class="module-link" href="${module.linkHref}">${module.linkText}</a>
+            </article>
+          `)
+          .join("");
+      }
+
+      const yearEl = document.getElementById("year");
+      if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
+      }
     </script>
   </body>
 </html>
